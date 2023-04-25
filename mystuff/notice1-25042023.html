@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0 2em 3em 2em;
+        }
+
+        td,
+        th {
+            text-align: center;
+            padding: 1em;
+            border: 1px solid black;
+        }
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .mono {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .question {
+            border: 1px solid black;
+            box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.5);
+            padding: 0.5em;
+            background-color: antiquewhite;
+        }
+
+        .info {
+            border: 1px solid black;
+            box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.5);
+            padding: 0.5em;
+            background-color: azure;
+        }
+
+        .info-footer {
+            padding: 0 10em 0 10em;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cap">
+        <h1>
+            Важная информация от 25.04.2023
+        </h1>
+        <p>
+            Пожалуйста, ознакомьтесь с ней для комфортной работы
+        </p>
+        <hr>
+    </div>
+
+    <div class="ticketInfo">
+        <p>
+            По заявке DEP-848-7261:
+        </p>
+        <div>
+            <ol>
+                <li>
+                    https://visualstudio.microsoft.com/ru/vs/mac/ Инсталлер Visual Studio 2022 для Mac Os. Необходимы
+                    Xamarin, SDK
+                    for iOS и Android, последние .NET и netfraemwork, остальные базовые компоненты
+                </li>
+                <li>
+                    PgAdmin 4 не работает на localhost, наверное с компьютера нельзя слушать этот порт но вообще по
+                    классике
+                    всё
+                    должно работать на этом хосте для локалки 127.0.0.1:5432, но а тут не работает на любом
+                </li>
+                <li>
+                    Можно ли установить на компьютеры Docker?
+                </li>
+                <li>
+                    На компьютерах установлены среды программирования, но не стоит ни одного языкового пакета:/
+                    Добавьте,
+                    пожалуйста, хотя бы 5 популярных языков
+                </li>
+                <li>
+                    C++ на Visual Studio
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="readme-text">
+        <h2>
+            Что было сделано:
+        </h2>
+        <div class="items">
+            <div id="item1">
+                <h3>
+                    1. Visual Studio 2022 для Mac Os
+                </h3>
+                <p>
+                    Visual Studio для macOS установлен и обновлен. Xamarin SDK for iOS & Android – компоненты
+                    установлены.
+                </p>
+                <div class="question">
+                    <h4>
+                        Вопрос
+                    </h4>
+                    <ul>
+                        <li>
+                            Что вы имели ввиду под <i>последними .NET и netfraemwork</i>? Есть ли между ними какие-то
+                            отличия или это ошибка в составлении заявки?
+                        </li>
+                        <li>
+                            Что вы имеете ввиду под <i>остальными базовыми компонентами</i>?
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="item2">
+                <h3>
+                    2. PostgreSQL
+                </h3>
+                <p>
+                    СУБД PostgreSQL установлена и работает. Для работы с СУБД PostgreSQL установлен клиент PgAdmin4.
+                </p>
+                <div class="info">
+                    <h4>
+                        Информация
+                    </h4>
+                    <p>
+                        СУБД PostgreSQL установлена через пакетный менеджер homebrew. Демон добавлен в автозагрузку, так
+                        что
+                        проблем не должно возникнуть при перезагрузке компьютера. По соображениям безопасности homebrew
+                        для
+                        учетной записи недоступен, но т.к. демон запущен и слушает порт 5432 на localhost, то вы смело
+                        можете к
+                        нему подключаться и работать с СУБД через PgAdmin4, который вам доступен.
+                    </p>
+                    <p>
+                        Обратите внимание на credentials, необходимые для подключения к БД:
+                    <table>
+                        <tr>
+                            <th>
+                                PgAdmin4 Master Password
+                            </th>
+                            <th>
+                                Host Name
+                            </th>
+                            <th>
+                                Port
+                            </th>
+                            <th>
+                                Database
+                            </th>
+                            <th>
+                                Username
+                            </th>
+                            <th>
+                                Password
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="mono">
+                                    ITMO
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mono">
+                                    localhost
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mono">
+                                    5432
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mono">
+                                    postgres
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mono">
+                                    itmoitmo
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mono">
+                                    &nbsp;
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    </p>
+                </div>
+            </div>
+            <div id="item3">
+                <h3>
+                    3. Docker
+                </h3>
+                <p>
+                    Docker установлен и запущен один раз от пользователя без прав админа для инициализации. Вроде
+                    работает. Если нет – напишите, контакты будут внизу.
+                </p>
+            </div>
+            <div id="item4">
+                <h3>
+                    4. Языковые пакеты
+                </h3>
+                <p>
+                    Я не совсем понял что нужно, поэтому просто установил JetBrains Toolbox (это, кстати, можно сделать
+                    и самому, права админа он для установки не требует, нужна лишь лицензия, которую вы можете получить
+                    заполнив форму на официальном сайте: <a
+                        href="https://www.jetbrains.com/shop/eform/students">https://www.jetbrains.com/shop/eform/students</a>)
+                </p>
+                <div class="question">
+                    <h4>
+                        Вопрос
+                    </h4>
+                    <ul>
+                        <li>
+                            Под <i>языковыми пакетами</i> вы имели ввиду языки программирования или локализацию
+                            (Русский, Английский, Испанский, и т.д.)?
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="item5">
+                <h3>
+                    5. C++ на Visual Studio
+                </h3>
+                <p>
+                    В Visual Studio под macOS никогда не было C++ и наверное не будет. Если вы как-то это устанавливали,
+                    то, пожалуйста расскажите мне об этом. Инструменты для разработки на С++ в окружении macOS:
+                <ul>
+                    <li>
+                        Xcode + Command-Line Tools (установлено)
+                    </li>
+                    <li>
+                        JetBrains Clion (установлено, требуется лицензия)
+                    </li>
+                    <li>
+                        Редактор исходного кода + clang
+                    </li>
+                    <li>
+                        и многое другое чего я не знаю
+                    </li>
+                </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="info-footer">
+        <p>
+            Если вы тот самый, кто подавал заявку на установку этих программ, то напишите мне на почту: <a
+                href="mailto:helpdesk@itmo.ru">helpdesk@itmo.ru</a>, для меня важно получить обратную связь о моей
+            работе.
+        </p>
+        <p>
+            Чтобы письмо дошло до меня, в теме на напишите: <b>"В дополнение к DEP-848-7261, [Установка ПО на
+                macOS]"</b>
+            Как
+            только я пойму, что сделал все правильно, то я смогу поставить эти программы на остальные компьютеры, чтобы
+            другие смогли ими комфортно пользоваться.
+        </p>
+        <p>
+            Спасибо.
+        </p>
+
+    </div>
+</body>
+
+</html>
